@@ -20,6 +20,12 @@ public class LargestFiveDigitNumberTest {
         assertEquals(67890, largestFiveDigitNumber.solve("67890"));
         assertEquals(74765, largestFiveDigitNumber.solve("731674765"));
     }
+    @Test
+    public void  BP_test(){
+        assertEquals(83910, largestFiveDigitNumber.BP_solve("283910"));
+        assertEquals(67890, largestFiveDigitNumber.BP_solve("67890"));
+        assertEquals(74765, largestFiveDigitNumber.BP_solve("731674765"));
+    }
 //    @Test
 //    public void exampleTests() {
 //        Preloaded.doTest("283910", 83910);

@@ -38,4 +38,14 @@ public class LargestFiveDigitNumber {
     public String simpleTest(){
         return "Test";
     }
+    public static int BP_solve(final String digits){
+        // init largest with min number
+        int largest = Integer.MIN_VALUE;
+        //for i in length digit's - 5
+        for (int i = 0; i <= digits.length() - 5; i++){
+            int number = Integer.parseInt(digits.substring(i, i + 5));
+            largest = Math.max(largest, number);
+        }
+        return largest;
+    }
 }
