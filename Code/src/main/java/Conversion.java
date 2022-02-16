@@ -5,11 +5,11 @@ public class Conversion {
             if((n % 1000 == 0 || (n + 1) % 1000 == 0 || (n - 1) % 1000 == 0) && n - 1 != 0){
                 if((n + 1) % 100 == 0){
                     n -= 1000;
-                    return result += "IM";
+                    return result += "DM";
                 }
                 if((n - 1) % 100 == 0){
                     n -= 1000;
-                    return result += "MI";
+                    return result += "MD";
                 }
                 result += "M";
                 n -= 1000;
@@ -17,11 +17,11 @@ public class Conversion {
             else if ((n % 500 == 0 || (n + 1) % 500 == 0 || (n - 1) % 500 == 0) && n - 1 != 0){
                 if((n + 1) % 500 == 0){
                     n -= 500;
-                    return result += "ID";
+                    return result += "CD";
                 }
                 if((n - 1) % 500 == 0){
                     n -= 500;
-                    return result += "DI";
+                    return result += "DC";
                 }
                 result += "D";
                 n -= 500;
@@ -29,11 +29,11 @@ public class Conversion {
             else if ((n % 100 == 0 || (n + 1) % 100 == 0 || (n - 1) % 100 == 0) && n - 1 != 0){
                 if((n + 1) % 100 == 0){
                     n -= 100;
-                    return result += "IC";
+                    return result += "LC";
                 }
                 if((n - 1) % 100 == 0){
                     n -= 100;
-                    return result += "CI";
+                    return result += "CL";
                 }
                 result += "C";
                 n -= 100;
@@ -41,11 +41,11 @@ public class Conversion {
             else if((n % 50 == 0 || (n + 1) % 50 == 0 || (n - 1) % 50 == 0) && n - 1 != 0){
                 if((n + 1) % 50 == 0){
                     n -= 50;
-                    return result += "IL";
+                    return result += "XL";
                 }
                 if((n - 1) % 50 == 0){
                     n -= 50;
-                    return result += "LI";
+                    return result += "LX";
                 }
                 result += "L";
                 n -= 50;
@@ -53,11 +53,11 @@ public class Conversion {
             else if((n % 10 == 0 || (n + 1) % 10 == 0 || (n - 1) % 10 == 0) && n - 1 != 0){
                 if((n + 1) % 10 == 0){
                     n -= 5;
-                    return result += "IX";
+                    return result += "VX";
                 }
                 if((n - 1) % 10 == 0){
                     n -= 5;
-                    return result += "XI";
+                    return result += "XV";
                 }
                 result += "X";
                 n -= 10;
