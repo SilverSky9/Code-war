@@ -1,86 +1,59 @@
-public class Conversion {
-    public String solution(int n) {
-        String result = "";
-        while (n != 0){
-            if((n % 1000 == 0 || (n + 1) % 1000 == 0 || (n - 1) % 1000 == 0) && n - 1 != 0){
-                if((n + 1) % 100 == 0){
-                    n -= 1000;
-                    return result += "DM";
-                }
-                if((n - 1) % 100 == 0){
-                    n -= 1000;
-                    return result += "MD";
-                }
-                result += "M";
-                n -= 1000;
-            }
-            else if ((n % 500 == 0 || (n + 1) % 500 == 0 || (n - 1) % 500 == 0) && n - 1 != 0){
-                if((n + 1) % 500 == 0){
-                    n -= 500;
-                    return result += "CD";
-                }
-                if((n - 1) % 500 == 0){
-                    n -= 500;
-                    return result += "DC";
-                }
-                result += "D";
-                n -= 500;
-            }
-            else if ((n % 100 == 0 || (n + 1) % 100 == 0 || (n - 1) % 100 == 0) && n - 1 != 0){
-                if((n + 1) % 100 == 0){
-                    n -= 100;
-                    return result += "LC";
-                }
-                if((n - 1) % 100 == 0){
-                    n -= 100;
-                    return result += "CL";
-                }
-                result += "C";
-                n -= 100;
-            }
-            else if((n % 50 == 0 || (n + 1) % 50 == 0 || (n - 1) % 50 == 0) && n - 1 != 0){
-                if((n + 1) % 50 == 0){
-                    n -= 50;
-                    return result += "XL";
-                }
-                if((n - 1) % 50 == 0){
-                    n -= 50;
-                    return result += "LX";
-                }
-                result += "L";
-                n -= 50;
-            }
-            else if((n % 10 == 0 || (n + 1) % 10 == 0 || (n - 1) % 10 == 0) && n - 1 != 0){
-                if((n + 1) % 10 == 0){
-                    n -= 5;
-                    return result += "VX";
-                }
-                if((n - 1) % 10 == 0){
-                    n -= 5;
-                    return result += "XV";
-                }
-                result += "X";
-                n -= 10;
-            }
-            else if((n % 5 == 0 || (n + 1) % 5 == 0 || (n - 1) % 5 == 0) && n - 1 != 0){
-                if((n + 1) % 5 == 0){
-                    n -= 5;
-                    return result += "IV";
-                }
-                if((n - 1) % 5 == 0){
-                    n -= 5;
-                    return result += "VI";
-                }
-                result += "V";
-                n -= 5;
-            }
-            else if (n % 1 == 0){
-                result += "I";
-                n -= 1;
-            }
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-        }
+public class Conversion {
+    Map<Integer, String> RomanNumber = new HashMap<>();
+    public String solution(int n) {
+       String result = "";
+       while (n != 0) {
+           if (n % 1000 != n) {
+               result += RomanNumber.get(n - (n % 1000));
+               n -= n - (n % 1000);
+           } else if (n % 100 != n) {
+               result += RomanNumber.get(n - (n % 100));
+               n -= n - (n % 100);
+           } else if (n % 10 != n) {
+               result += RomanNumber.get(n - (n % 10));
+               n -= n -(n % 10);
+           } else {
+               result += RomanNumber.get(n);
+               n -= n;
+           }
+       }
         return result;
+    }
+    public Conversion(){
+        RomanNumber.put(1,"I");
+        RomanNumber.put(2,"II");
+        RomanNumber.put(3,"III");
+        RomanNumber.put(4, "IV");
+        RomanNumber.put(5, "V");
+        RomanNumber.put(6, "VI");
+        RomanNumber.put(7, "VII");
+        RomanNumber.put(8, "VIII");
+        RomanNumber.put(9, "IX");
+        RomanNumber.put(10, "X");
+        RomanNumber.put(20, "XX");
+        RomanNumber.put(30, "XXX");
+        RomanNumber.put(40, "XL");
+        RomanNumber.put(50, "L");
+        RomanNumber.put(60, "LX");
+        RomanNumber.put(70, "LXX");
+        RomanNumber.put(80, "LXXX");
+        RomanNumber.put(90, "XC");
+        RomanNumber.put(100, "C");
+        RomanNumber.put(200, "CC");
+        RomanNumber.put(300, "CCC");
+        RomanNumber.put(400, "CD");
+        RomanNumber.put(500, "D");
+        RomanNumber.put(600, "DC");
+        RomanNumber.put(700, "DCC");
+        RomanNumber.put(800, "DCCC");
+        RomanNumber.put(900, "CM");
+        RomanNumber.put(1000, "M");
+        RomanNumber.put(2000, "MM");
+        RomanNumber.put(3000, "MMM");
     }
 
 }

@@ -15,7 +15,15 @@ public class ConversionTest {
 //    public void simpleTest(){
 //        assertEquals("1", conversion.solution(1));
 //    }
-
+    @Test
+    public  void simplesimpleTestCase(){
+        assertEquals("I", conversion.solution(1));
+        assertEquals("III", conversion.solution(3));
+        assertEquals("VI", conversion.solution(6));
+        assertEquals("IX", conversion.solution(9));
+        assertEquals("M", conversion.solution(1000));
+        assertEquals("CMXC", conversion.solution(990));
+    }
     @Test
     public void simpleTestCase() {
         assertEquals("solution(1) should equal to I", "I", conversion.solution(1));
@@ -25,6 +33,7 @@ public class ConversionTest {
     @Test
     public void SummitTestCase(){
         assertEquals("solution(10) should equal to X", "CDVIII", conversion.solution(408));
+        assertEquals("solution(10) should equal to X", "MMMCCLI", conversion.solution(3251));
     }
 }
 
